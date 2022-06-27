@@ -1,10 +1,9 @@
 _base_ = [
-    '../_base_/models/segformer_mit-b0.py', '../_base_/datasets/ade20k.py',
-    '../_base_/default_runtime.py', '../_base_/schedules/schedule_160k.py'
+    '../_base_/models/segformer_mit-b0.py', '../_base_/default_runtime.py', '../_base_/schedules/schedule_160k.py'
 ]
 
 model = dict(
-    pretrained='pretrain/mit_b0.pth', decode_head=dict(num_classes=150))
+    pretrained='pretrained/mit_b0.pth', decode_head=dict(num_classes=33))
 
 # optimizer
 optimizer = dict(

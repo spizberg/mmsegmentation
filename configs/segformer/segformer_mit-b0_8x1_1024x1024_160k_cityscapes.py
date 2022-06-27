@@ -4,10 +4,9 @@ _base_ = [
     '../_base_/default_runtime.py', '../_base_/schedules/schedule_160k.py'
 ]
 
-checkpoint = 'https://download.openmmlab.com/mmsegmentation/v0.5/pretrain/segformer/mit_b0_20220624-7e0fe6dd.pth'  # noqa
-
 model = dict(
-    backbone=dict(init_cfg=dict(type='Pretrained', checkpoint=checkpoint)),
+    backbone=dict(
+        init_cfg=dict(type='Pretrained', checkpoint='pretrain/mit_b0.pth')),
     test_cfg=dict(mode='slide', crop_size=(1024, 1024), stride=(768, 768)))
 
 # optimizer
